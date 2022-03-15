@@ -1,0 +1,187 @@
+#Saber em que diretório estou:
+$ pwd
+
+#Listar arquivos e diretórios
+$ ls
+
+#ler arquivo sem manipula-lo
+$ cat <arquivo>
+
+#ver arquivo com o numero das linhas
+$ nl <arquivo>
+
+#ordenar numeros de um arquivo
+$ sort <arquivo>
+
+#imprimir uma sequencia de numeros
+$ seq 1 10
+
+#saber o numero de linhas que um arquivo tem
+$ wc -l <arquivo>
+
+#saber o numero de palavras que um arquivo tem
+$ wc -w <arquivo>
+
+#arquivo do "fim pro começo"
+$ tac <arquivo>
+
+#ler as 10 primeiras linhas de um arquivo
+$ head <arquivo>
+
+#ler as 10 últimas linhas de um arquivo
+$ tail <arquivo>
+
+#pegar a saida de algum comando e salvar em outro arquivo ">"
+$ tail <arquivo> > <arquivo_novo>
+#adicionar a saida a um arquivo ja existente (na ultima linha do arquivo)
+$ tail <arquivo> >> <arquivo_novo>
+
+
+#abrir calendario organizado no mes corrente
+$ cal
+#abrir calendario do ano x
+$ cal 2022
+#abrir calendario do mes x ano y
+$ cal jul 2022
+
+#exibir data e horário
+$ date
+
+#renomear arquivo
+# mv <arquivo> <arquivo_renomeado>
+
+#buscar arquivos
+$ find ~ -name <arquivo>
+
+#listar histórico de comandos
+$ history
+#limpar histórico
+$ history -c
+
+#####comandos uteis de hardware e sistema
+#arquitetura do sistema
+$ arch
+#kernel do sistema
+$ uname
+#kernel e versão
+$ uname -r
+# memória disponivel e total
+$ free
+#verificar armazenamento
+$ du -h
+#infos sobre cpu
+$ lscpu
+#infos sobre o hw
+$ lshw
+
+#dpkg para arquivos .deb install
+$ dkpg -i <pack.deb>
+dpkg para arquivos .deb descrição
+$ dkpg -I <pack.deb>
+#dpkg para arquivos .deb install
+$ dkpg -r <pack name>
+
+#instalação de pacotes com rpm
+#install rpm package
+$ rpm -ivh <pack.rpm>
+#atualização rpm package
+$ rpm -U <pack.rpm>
+#remoção rpm package
+$ rpm -e <pack.rpm>
+
+#instalação de pacotes com yum
+#install rpm package
+$ yum install <nome do pacote>
+#atualização rpm package
+$ yum update <nome do pacote>
+#remoção rpm package
+$ yum remove <nome do pacote>
+
+
+
+##### gerenciamento de usuários
+#add novo user
+$ adduser <nome>
+#trocar de user
+$ su <nome do user>
+#alterar senha de user
+$ passwd <user>
+#ultimos logins
+$ lastlog
+#nome do user atuak  logado
+$ logname
+#exibir user e groups
+$ id
+#remover user e pasta
+$ userdel -r <user>
+#adicionar um user a um grupo
+$ adduser <user> <grupo>
+
+#arquivos compactados gz
+$ gzip
+#descompacta gz
+$ gunzip
+#arquivos compactados zip
+$ zip
+#descompacta zip
+$ unzip
+#arquivos compactados rar
+$ rar
+#descompacta rar
+$ rar -x
+
+
+
+
+
+#####permissões
+#servem para arquivos como para diretórios
+# r - escrita (4)
+# w - leitura (2)
+# x - execução (1)
+#verificar permissões em um diretório:
+$ ls -lh
+
+##entendendo o desctritivo da saida do ls -lh:
+# drwxr-xr-x  4 pollyanna.rigon  staff   128B Mar 15 16:36 linux
+# a primeira letra marca se é um diretório ou arquivo (se for arquivo é apenas um -)
+# as 3 próximas letras são as permissões do dono do arquivo
+# as 3 próximas são as permissões do grupo
+# as 3 próximas são as permissões dos outros (quem não está no grupo)
+# o primeiro nome é o do usuário
+# o segundo nome é o do grupo
+# data e hora de criação do arquivo/pasta
+
+##mudando a permissão de arquivo ou diretorio com chmod
+# chmod usa o sistema octal para permissões
+# para dizer quais são as permissões que queremos precisamos utilizar os números de referencias de cada permissão
+# se eu quiser dar permissão de leitura e execução o número será 3
+# se eu quiser todas as permissões será 7
+# tendo os números em mente o chmod entende as permissões para owner group e outros com a sequencia dos numeros obtidos anteriormente
+# ex: Quero que o owner tenha permissão pra tudo(7), o grupo para leitura e execução (3) e os outros apenas leitura(2):
+$ chmod 732 <arquivo ou diretorio>
+
+
+
+
+
+
+#####comandos uteis de rede
+#infos sobre interface de rede e ips
+$ ifconfig
+# infos sobre o host
+$ hostname
+#infos sobre o host com ip
+$ hostname -i
+#infos sobre o dns de algum host
+$ dig <host>
+#infos detalhadas sobre o usuário no computador da rede
+$w
+#infos curtas sobre o user no comp da rede
+$ who
+#nome de usuario na rede
+$ whoami
+#infos de rotas da maquina ate o host
+$ traceroute <host>
+#teste de conectividade com host
+$ ping <host>

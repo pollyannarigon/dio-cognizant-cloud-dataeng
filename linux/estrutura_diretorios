@@ -1,0 +1,15 @@
+/bin -> todos os binários principais (cd, ls e outros "executáveis")
+/boot -> todos os arquivos para carregar e inicializar o sistema
+/dev -> drivers, arquivos de disposivitos (placa de rede, de som)
+/etc -> arquivos de configurações de sistema
+/home -> diretório de users comuns
+/lib -> bibliotecas essenciais do sistema e módulos do kernel
+/mnt -> montagem de disposivitos externos
+/opt -> instalação de programas que não são do sistema
+/sbin -> armazena executáveis de comandos administrativos (shotdown)
+/srv -> dados de serviços fornecidos pelo sistema
+/tmp -> arquivos temporários
+/usr -> usuários comuns do sistema e programas
+/var -> arquivos variaveis gerados pelo sistema (logs)
+/root -> diretório do user root
+/proc -> diretório virtual comandado pelo kernel (memória, cpu, etc)
